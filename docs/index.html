@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataReel: Automated Data-Driven Video Story Generation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 { font-size: 2.2em; text-align: center; margin-bottom: 10px; }
+        .authors { text-align: center; color: #555; margin-bottom: 20px; }
+        .links { text-align: center; margin-bottom: 40px; }
+        .links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 8px 20px;
+            background: #2d2d2d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .links a:hover { background: #444; }
+        h2 { margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #eee; }
+        .abstract { text-align: justify; background: #f9f9f9; padding: 20px; border-radius: 8px; }
+        .video-container { text-align: center; margin: 20px 0; }
+        video { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .figure { margin: 30px 0; text-align: center; }
+        .figure img { max-width: 100%; border-radius: 8px; }
+        .caption { margin-top: 15px; color: #555; font-size: 0.95em; text-align: left; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+    <h1>DataReel: Automated Data-Driven Video Story Generation with Animations</h1>
+
+    <p class="authors">
+        Ridwan Mahbub<sup>1*</sup>, Syem Aziz<sup>2</sup>, Mahir Ahmed<sup>1</sup>, Shadikur Rahman<sup>1</sup>,
+        Mizanur Rahman<sup>1,3</sup>, Shafiq Joty<sup>4,5</sup>, Enamul Hoque<sup>1</sup><br>
+        <small><sup>1</sup>York University &nbsp; <sup>2</sup>BUBT &nbsp; <sup>3</sup>RBC, Canada &nbsp; <sup>4</sup>NTU &nbsp; <sup>5</sup>Salesforce AI Research</small>
+    </p>
+
+    <div class="links">
+        <a href="https://arxiv.org/abs/2604.25220">arXiv</a>
+        <a href="https://github.com/vis-nlp/DataReel">Code</a>
+    </div>
+
+    <h2>Abstract</h2>
+    <p class="abstract">
+        Data videos are a powerful medium for visual data-based storytelling, combining animated, chart-centric visualizations with synchronized narration. Widely used in journalism, education, and public communication, they help audiences understand complex data through clear and engaging visual explanations. Despite their growing impact, generating data-driven video stories remains challenging, as it requires careful coordination of visual encoding, temporal progression, and narration and substantial expertise in visualization design, animation, and video-editing tools. Recent advances in large language models offer new opportunities to automate this process; however, there is currently no benchmark for rigorously evaluating models on animated visualization-based video storytelling. To address this gap, we introduce <strong>DataReel</strong>, a benchmark for automated data-driven video story generation comprising 328 real-world stories. Each story pairs structured data, a chart visualization, and a narration transcript, enabling systematic evaluation of models' abilities to generate animated data video stories. We further propose a multi-agent framework that decomposes the task into planning, generation, and verification stages, mirroring key aspects of the human storytelling process.
+    </p>
+
+    <h2>Demo</h2>
+    <div class="video-container">
+        <video controls>
+            <source src="56_final.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <h2>Pipeline</h2>
+    <div class="figure">
+        <img src="AnimationCodeGeneration.png" alt="Pipeline Overview">
+        <p class="caption">
+            <strong>Overview:</strong> (1) Construct benchmark by collecting real-world data reels and extracting chart data.
+            (2) Given chart data and user intent, VLMs generate animation code.
+            (3) Code is rendered into the final data video.
+            (4) Videos are evaluated via human assessment and VLM-based judge.
+        </p>
+    </div>
+
+    <h2>Multi-Agent Framework</h2>
+    <div class="figure">
+        <img src="Agentic_Framework.png" alt="Multi-Agent Framework">
+        <p class="caption">
+            <strong>Four specialized agents:</strong> (1) <strong>Director Agent</strong> converts intent and data into an animation plan.
+            (2) <strong>Plan Critic Agent</strong> verifies alignment with intent.
+            (3) <strong>Coder Agent</strong> generates executable HTML/D3.js code.
+            (4) <strong>Video Critic Agent</strong> evaluates the rendered video and sends corrections if needed.
+        </p>
+    </div>
+
+    <h2>Citation</h2>
+    <pre>@misc{mahbub2026datareelautomateddatadrivenvideo,
+      title={DATAREEL: Automated Data-Driven Video Story Generation with Animations},
+      author={Ridwan Mahbub and Syem Aziz and Mahir Ahmed and Shadikur Rahman and Mizanur Rahman and Shafiq Joty and Enamul Hoque},
+      year={2026},
+      eprint={2604.25220},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2604.25220},
+}</pre>
+
+</body>
+</html>
