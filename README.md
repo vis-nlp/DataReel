@@ -4,7 +4,7 @@
 
 **DataReel** is a benchmark for automated data-driven video story generation with 328 real-world data reels paired with structured data, visualizations, and narration transcripts.
 
-**[Project Page](https://ridwan230.github.io/DataReelProject/)**
+**[Project Page](https://data-reel.github.io/)**
 
 ## Citation
 
